@@ -1,0 +1,44 @@
+{
+  "entry": {
+    "Description": "Вы стоите перед заброшенным бункером. Внутри слышен гул.",
+    "Options": {
+      "Спуститься внутрь": "corridor",
+      "Осмотреть окрестности": "forest"
+    },
+    "IsEnding": false
+  },
+  "forest": {
+    "Description": "В лесу вы находите старый рюкзак и ржавый люк.",
+    "Options": {
+      "Открыть люк": "lab",
+      "Вернуться к входу в бункер": "entry"
+    },
+    "IsEnding": false
+  },
+  "corridor": {
+    "Description": "Длинный коридор. Слева — дверь с надписью 'BIO', справа — лестница вниз.",
+    "Options": {
+      "Зайти в BIO": "lab",
+      "Спуститься по лестнице": "generator"
+    },
+    "IsEnding": false
+  },
+  "lab": {
+    "Description": "Здесь колбы с синим газом. Одна из них разбита!",
+    "Options": {
+      "Задержать дыхание и бежать": "generator",
+      "Исследовать записи": "death_gas"
+    },
+    "IsEnding": false
+  },
+  "generator": {
+    "Description": "Вы нашли работающий генератор и активировали связь. Спасение близко!",
+    "Options": null,
+    "IsEnding": true
+  },
+  "death_gas": {
+    "Description": "Газ оказался быстрее. Вы засыпаете навсегда.",
+    "Options": null,
+    "IsEnding": true
+  }
+}

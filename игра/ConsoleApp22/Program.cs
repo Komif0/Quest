@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.Design;
 using System.Linq;
 
 class StoryGame
@@ -7,7 +10,7 @@ class StoryGame
     class Scene
     {
         public string Description { get; set; }
-        public Dictionary<string, string> Options { get; set; } // Текст выбора -> ID следующей сцены
+        public Dictionary<string, string> Options { get; set; }
         public bool IsEnding { get; set; }
     }
 
@@ -16,33 +19,55 @@ class StoryGame
     static void Main()
     {
         InitGame();
+
+        string jsonInfo = JsonConvert.SerializeObject(_world, Formatting.Indented);
+
+        
+        using (StreamReader sw = new StreamReader("scenes.json")) 
+        {
+            string json = File.ReadAllText("scenes.json");
+            Dictionary<string, Scene> values = JsonConvert.DeserializeObject<Dictionary<string, Scene>>(json);
+            foreach (var val in values) 
+            {
+                 Console.WriteLine(val.Key);
+            }
+            //Console.WriteLine(json);
+        }
+
+
+
+
+        
+
+
         string currentId = "entry";
 
-        while (true)
-        {
-            var scene = _world[currentId];
-            Console.Clear();
-            Console.WriteLine($"--- {currentId.ToUpper()} ---\n");
-            Console.WriteLine(scene.Description);
+        //while (true)
+        //{
+        //    var scene = _world[currentId];
+        //    Console.Clear();
+        //    Console.WriteLine($"--- {currentId.ToUpper()} ---\n");
+        //    Console.WriteLine(scene.Description);
 
-            if (scene.IsEnding) break;
+        //    if (scene.IsEnding) break;
 
-            var optionsList = scene.Options.Keys.ToList();
-            for (int i = 0; i < optionsList.Count; i++)
-                Console.WriteLine($"{i + 1}. {optionsList[i]}");
+        //    var optionsList = scene.Options.Keys.ToList();
+        //    for (int i = 0; i < optionsList.Count; i++)
+        //        Console.WriteLine($"{i + 1}. {optionsList[i]}");
 
-            Console.Write("\nВыбор: ");
-            if (int.TryParse(Console.ReadLine(), out int choice) && choice > 0 && choice <= optionsList.Count)
-            {
-                currentId = scene.Options[optionsList[choice - 1]];
-            }
-        }
-        Console.WriteLine("\n[Нажмите любую клавишу для выхода]");
-        Console.ReadKey();
+        //    Console.Write("\nВыбор: ");
+        //    if (int.TryParse(Console.ReadLine(), out int choice) && choice > 0 && choice <= optionsList.Count)
+        //    {
+        //        currentId = scene.Options[optionsList[choice - 1]];
+        //    }
+        //}
+        //Console.WriteLine("\n[Нажмите любую клавишу для выхода]");
+        //Console.ReadKey();
     }
 
     static void InitGame()
     {
+
         // Ветка 1: Вход
         _world["entry"] = new Scene
         {
@@ -53,6 +78,8 @@ class StoryGame
                 ["Осмотреть окрестности"] = "forest"
             }
         };
+
+
 
         // Ветка 2: Лес (Поиск ресурсов)
         _world["forest"] = new Scene
@@ -99,5 +126,6 @@ class StoryGame
             Description = "Газ оказался быстрее. Вы засыпаете навсегда.",
             IsEnding = true
         };
+
     }
 }
