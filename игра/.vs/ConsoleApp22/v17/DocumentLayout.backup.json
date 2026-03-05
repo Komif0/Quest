@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Admin\\Quest\\\u0438\u0433\u0440\u0430\\",
+  "WorkspaceRootPath": "C:\\Users\\\u0432.\u0431\u0430\u043D\u0438\u0440\u0430\\Quest\\\u0438\u0433\u0440\u0430\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B2EF371B-0ECE-49FF-AD71-BB579FF38A35}|ConsoleApp22\\ConsoleApp22.csproj|c:\\users\\admin\\quest\\\u0438\u0433\u0440\u0430\\consoleapp22\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B2EF371B-0ECE-49FF-AD71-BB579FF38A35}|ConsoleApp22\\ConsoleApp22.csproj|c:\\users\\\u0432.\u0431\u0430\u043D\u0438\u0440\u0430\\quest\\\u0438\u0433\u0440\u0430\\consoleapp22\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B2EF371B-0ECE-49FF-AD71-BB579FF38A35}|ConsoleApp22\\ConsoleApp22.csproj|solutionrelative:consoleapp22\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -20,11 +20,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Quest\\\u0438\u0433\u0440\u0430\\ConsoleApp22\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\\u0432.\u0431\u0430\u043D\u0438\u0440\u0430\\Quest\\\u0438\u0433\u0440\u0430\\ConsoleApp22\\Program.cs",
               "RelativeDocumentMoniker": "ConsoleApp22\\Program.cs",
-              "ToolTip": "C:\\Users\\Admin\\Quest\\\u0438\u0433\u0440\u0430\\ConsoleApp22\\Program.cs",
+              "ToolTip": "C:\\Users\\\u0432.\u0431\u0430\u043D\u0438\u0440\u0430\\Quest\\\u0438\u0433\u0440\u0430\\ConsoleApp22\\Program.cs",
               "RelativeToolTip": "ConsoleApp22\\Program.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAACYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAHsAAAAAAAAAAADwv5wAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-02T13:55:01.172Z",
               "EditorCaption": ""
