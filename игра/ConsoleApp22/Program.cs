@@ -7,6 +7,48 @@ using System.Linq;
 
 class StoryGame
 {
+    static class SceneCreator 
+    {
+        public static Dictionary<string, Scene> CreateScene() 
+        {
+            Console.WriteLine("Введите описание сцены: ");
+            var desc = Console.ReadLine();
+
+            Console.WriteLine("Сцена является концовкой? 0 - нет; 1 - да");
+            bool isEnding = bool.Parse(Console.ReadLine());
+            
+
+            Console.WriteLine("Вводите варианты ответа, 0 - выход из цикла");
+
+            Dictionary<string, string> opts = new Dictionary<string, string>(); 
+
+            int i = 0; 
+            while (true) 
+            {
+                Console.WriteLine($"Введите вариант ответа {i}: ");
+                string keyVal = Console.ReadLine();
+                if (keyVal == "0") 
+                {
+                    Console.WriteLine("Вы завершили создание опций!");
+                    break; 
+                }
+                Console.WriteLine($"Введите локацию, на которую ведет ответ {i}: ");
+                string nextScene = Console.ReadLine();
+                
+                opts.Add(keyVal, nextScene); 
+            }
+
+            Scene scene = new Scene
+            {
+                Description = Console.ReadLine(),
+                Options = opts,
+                IsEnding = isEnding
+            };
+
+            Dictionary<string, Scene> newScene = new Dictionary<string, Scene>() { [desc] = scene};
+            return newScene; 
+        }
+    }
     class Scene
     {
         public string Description { get; set; }
@@ -33,12 +75,6 @@ class StoryGame
             }
             //Console.WriteLine(json);
         }
-
-
-
-
-        
-
 
         string currentId = "entry";
 
